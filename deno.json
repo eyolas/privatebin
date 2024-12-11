@@ -1,0 +1,10 @@
+{
+  "name": "@eyolas/privatebin",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "license": "MIT",
+  "imports": {
+    "@deno-library/compress": "jsr:@deno-library/compress@^0.5.5",
+    "@std/encoding": "jsr:@std/encoding@^1.0.5"
+  }
+}
