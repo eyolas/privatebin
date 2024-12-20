@@ -1,4 +1,3 @@
-export * from "./privatebin.ts";
-export * from "./types.ts";
-export * from "./utils.ts";
-
+export * from "./internal/key.ts";
+export * from "./internal/privatebin.ts";
+export * from "./internal/types.ts";

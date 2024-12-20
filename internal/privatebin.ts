@@ -5,7 +5,7 @@ import type {
   PrivatebinPasteRequest,
   PrivatebinResponse,
 } from "./types.ts";
-import { decryptText, encryptText } from "./utils.ts";
+import { decryptText, encryptText } from "./crypt.ts";
 
 export class PrivatebinClient {
   baseURL: string;

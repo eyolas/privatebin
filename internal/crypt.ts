@@ -1,16 +1,12 @@
 import { deflateRaw, inflateRaw } from "@deno-library/compress";
-import {
-  decrypt,
-  encrypt,
-  stringToUint8Array,
-  uint8ArrayToString,
-} from "./crypto.ts";
+import { decrypt, encrypt } from "./crypto.ts";
 import type {
   PrivatebinAdata,
   PrivatebinOptions,
   PrivatebinPaste,
   PrivatebinPasteRequest,
 } from "./types.ts";
+import { stringToUint8Array, uint8ArrayToString } from "./uint8.utils.ts";
 
 export function encryptText(
   text: string,
@@ -45,12 +41,8 @@ export async function decryptText(
 ): Promise<PrivatebinPaste> {
   const buf = await decrypt(ct, key, adata);
   if (adata[0][7] === "zlib") {
-    return JSON.parse( new TextDecoder().decode(inflateRaw(buf)));
+    return JSON.parse(new TextDecoder().decode(inflateRaw(buf)));
   }
 
   return JSON.parse(uint8ArrayToString(buf));
-}
-
-export function createKey(): Uint8Array {
-  return globalThis.crypto.getRandomValues(new Uint8Array(32));
 }

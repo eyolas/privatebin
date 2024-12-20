@@ -5,6 +5,7 @@ import type {
   PrivatebinPasteRequest,
   PrivatebinSpec,
 } from "./types.ts";
+import { stringToUint8Array } from "./uint8.utils.ts";
 
 export function importKey(key: Uint8Array): Promise<CryptoKey> {
   return globalThis.crypto.subtle.importKey("raw", key, "PBKDF2", false, [
@@ -26,16 +27,6 @@ export function deriveKey(
     false,
     ["encrypt", "decrypt"],
   );
-}
-
-export function stringToUint8Array(str: string): Uint8Array {
-  const encoder = new TextEncoder();
-  return encoder.encode(str);
-}
-
-export function uint8ArrayToString(buf: Uint8Array): string {
-  const decoder = new TextDecoder();
-  return decoder.decode(buf);
 }
 
 export function concatUint8Array(
