@@ -1,7 +1,11 @@
 {
   "name": "@eyolas/privatebin",
   "version": "1.0.0",
-  "exports": "./mod.ts",
+  "exports": {
+    ".": "./mod.ts",
+    "./privatebin": "./privatebin.ts",
+    "./create_key": "./create_key.ts"
+  },
   "license": "MIT",
   "imports": {
     "@deno-library/compress": "jsr:@deno-library/compress@^0.5.5",
