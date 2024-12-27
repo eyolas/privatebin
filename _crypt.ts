@@ -1,13 +1,20 @@
 import { deflateRaw, inflateRaw } from "@deno-library/compress";
-import { decrypt, encrypt } from "./crypto.ts";
+import { decrypt, encrypt } from "./_crypto.ts";
 import type {
   PrivatebinAdata,
   PrivatebinOptions,
   PrivatebinPaste,
   PrivatebinPasteRequest,
-} from "./types.ts";
-import { stringToUint8Array, uint8ArrayToString } from "./uint8.utils.ts";
+} from "./_type.ts";
+import { stringToUint8Array, uint8ArrayToString } from "./_uint8.utils.ts";
 
+/**
+ * Encrypts the given text with the given key and options.
+ * @param text The text to encrypt
+ * @param key The key to use for encryption
+ * @param options Options to use for encryption
+ * @returns  The encrypted text
+ */
 export function encryptText(
   text: string,
   key: Uint8Array,
@@ -34,6 +41,12 @@ export function encryptText(
   return encrypt(buf, key, spec);
 }
 
+/**
+ * @param ct
+ * @param key
+ * @param adata
+ * @returns
+ */
 export async function decryptText(
   ct: string,
   key: Uint8Array,

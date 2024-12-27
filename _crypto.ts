@@ -4,9 +4,14 @@ import type {
   PrivatebinAdata,
   PrivatebinPasteRequest,
   PrivatebinSpec,
-} from "./types.ts";
-import { stringToUint8Array } from "./uint8.utils.ts";
+} from "./_type.ts";
+import { stringToUint8Array } from "./_uint8.utils.ts";
 
+/**
+ * Import a key from a Uint8Array and return a CryptoKey with PBKDF2 algorithm
+ * @param key The key to import
+ * @returns The imported key
+ */
 export function importKey(key: Uint8Array): Promise<CryptoKey> {
   return globalThis.crypto.subtle.importKey("raw", key, "PBKDF2", false, [
     "deriveBits",
@@ -14,6 +19,14 @@ export function importKey(key: Uint8Array): Promise<CryptoKey> {
   ]);
 }
 
+/**
+ * Derive a key from a given key, salt, iterations and key length
+ * @param key the key to derive from
+ * @param salt the salt to use
+ * @param iterations the number of iterations
+ * @param keyLength the length of the key to derive
+ * @returns The derived key
+ */
 export function deriveKey(
   key: CryptoKey,
   salt: Uint8Array,
@@ -29,6 +42,12 @@ export function deriveKey(
   );
 }
 
+/**
+ * Concatenate two Uint8Arrays
+ * @param arr1 The first Uint8Arrays
+ * @param arr2 The second Uint8Arrays
+ * @returns The concatenated Uint8Array
+ */
 export function concatUint8Array(
   arr1: Uint8Array,
   arr2: Uint8Array,
@@ -39,6 +58,13 @@ export function concatUint8Array(
   return result;
 }
 
+/**
+ * Encrypt the given message with the given masterkey and spec
+ * @param message The message to encrypt
+ * @param masterkey The masterkey to use for encryption
+ * @param spec The spec to use for encryption
+ * @returns The encrypted message
+ */
 export async function encrypt(
   message: Uint8Array,
   masterkey: Uint8Array,
@@ -82,6 +108,13 @@ export async function encrypt(
   };
 }
 
+/**
+ * Decrypt the given data with the given masterkey and adata
+ * @param data the data to decrypt
+ * @param masterkey the masterkey to use for decryption
+ * @param adata the adata to use for decryption
+ * @returns The decrypted data
+ */
 export async function decrypt(
   data: string,
   masterkey: Uint8Array,
