@@ -1,5 +1,29 @@
 # Changelog
 
+# [1.0.1](https://github.com/eyolas/privatebin/compare/v1.0.0...v1.0.1) - (2024-12-27)
+
+## <!-- 0 -->🚀 Features
+
+- Update exports in deno.json to include privatebin and create_key modules
+  ([a661a88](https://github.com/eyolas/privatebin/commit/a661a887af69e79ce88f2454394e0d56688de97d)) -
+  (eyolas)
+
+## <!-- 2 -->🚜 Refactor
+
+- Rename and reorganize cryptographic modules; update types and add
+  documentation
+  ([7c49ee6](https://github.com/eyolas/privatebin/commit/7c49ee6c96eb34206ede84821cfbeae173737302)) -
+  (eyolas)
+
+## <!-- 9 -->⬆️ Upgrades
+
+- Upgraded from v1.0.0 -> v1.0.0
+  ([#2](https://github.com/eyolas/privatebin/issues/2))
+
+Co-authored-by: eyolas <1489456+eyolas@users.noreply.github.com>
+([cadc2db](https://github.com/eyolas/privatebin/commit/cadc2dba9ddf245a65ee01ae0ce7e718b5297723)) -
+(github-actions[bot])
+
 # [1.0.0](https://github.com/eyolas/privatebin/tree/v1.0.0) - (2024-12-20)
 
 ## <!-- 1 -->🐛 Bug Fixes
