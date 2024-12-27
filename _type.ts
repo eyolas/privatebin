@@ -81,7 +81,6 @@ export interface PrivatebinOptions {
   textformat: "plaintext" | "markdown";
 }
 
-
 /**
  * The spec to use for encryption and decryption.
  */
