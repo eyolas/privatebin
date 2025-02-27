@@ -1,5 +1,41 @@
 # Changelog
 
+# [1.0.2](https://github.com/eyolas/privatebin/compare/v1.0.1...v1.0.2) - (2025-02-27)
+
+## <!-- 1 -->🐛 Bug Fixes
+
+- Ensure baseURL ends with a trailing slash and update fetch calls accordingly.
+  fix #5
+  ([fc476fe](https://github.com/eyolas/privatebin/commit/fc476fe5940478fbfc962e1e75993da62599f64b)) -
+  (eyolas)
+
+## <!-- 3 -->📚 Documentation
+
+- Add installation instructions for Deno and pnpm in README.md
+  ([9ba367e](https://github.com/eyolas/privatebin/commit/9ba367e265f18f8acf1dd7211764755ed5088519)) -
+  (eyolas)
+
+## <!-- 7 -->⚙️ Miscellaneous Tasks
+
+- Deno fmt
+  ([f3659c9](https://github.com/eyolas/privatebin/commit/f3659c9fb9b64972c0abb67f97d1113213a383bf)) -
+  (eyolas)
+- Update deno.lock to include @std/async@1.0.10
+  ([c915d87](https://github.com/eyolas/privatebin/commit/c915d87e119565911470971ec4c8b4b71013ffea)) -
+  (eyolas)
+- Add MIT License file
+  ([3f8f498](https://github.com/eyolas/privatebin/commit/3f8f498d7482d3e7e347a74e350daa0b49328cd3)) -
+  (eyolas)
+
+## <!-- 9 -->⬆️ Upgrades
+
+- Upgraded from v1.0.0 -> v1.0.1
+  ([#3](https://github.com/eyolas/privatebin/issues/3))
+
+Co-authored-by: eyolas <1489456+eyolas@users.noreply.github.com>
+([9f0ad13](https://github.com/eyolas/privatebin/commit/9f0ad13389d8e8f773ef554860972ae2fae60b2a)) -
+(github-actions[bot])
+
 # [1.0.1](https://github.com/eyolas/privatebin/compare/v1.0.0...v1.0.1) - (2024-12-27)
 
 ## <!-- 0 -->🚀 Features
