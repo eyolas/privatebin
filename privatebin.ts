@@ -14,6 +14,9 @@ export class PrivatebinClient {
   headers: { "Content-Type": string; "X-Requested-With": string };
   constructor(baseURL = "https://privatebin.net") {
     this.baseURL = baseURL;
+    if (!baseURL.endsWith("/")) {
+      this.baseURL = baseURL += "/";
+    }
     this.headers = {
       "Content-Type": "application/json",
       "X-Requested-With": "JSONHttpRequest",
@@ -43,7 +46,7 @@ export class PrivatebinClient {
   }
 
   async #getPaste(id: string): Promise<PrivatebinPasteRequest> {
-    const result = await fetch(`${this.baseURL}/?pasteid=${id}`, {
+    const result = await fetch(`${this.baseURL}?pasteid=${id}`, {
       method: "GET",
       headers: this.headers,
     });
@@ -57,7 +60,7 @@ export class PrivatebinClient {
     const { expire } = options;
     const { ct, adata } = PrivatebinPasteRequest;
 
-    const result = await fetch(this.baseURL + "/", {
+    const result = await fetch(this.baseURL, {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify({
