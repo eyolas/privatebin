@@ -2,6 +2,18 @@
 
 Client Library to interact with privatebin (https://privatebin.net)
 
+### Installation
+
+Deno
+```bash
+deno add jsr:@eyolas/privatebin
+```
+
+pnpm
+```bash
+pnpm dlx jsr add @eyolas/privatebin
+```
+
 ### Usage
 
 ```typescript
